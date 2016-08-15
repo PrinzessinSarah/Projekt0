@@ -44,7 +44,7 @@ public class ThermometerApp {
 				rechteck[1][1] = "xxx";
 			break;
 		}
-		ausgabe = eingabeText+"s Zufriedenheitsskala:\n";
+		ausgabe = eingabeText+"s Zufriedenheitsskala:\r\n";
 		
 		System.out.println(ausgabe);
 		for (int i = 0; i < rechteck.length; i++) {
@@ -53,12 +53,12 @@ public class ThermometerApp {
 				ausgabe = ausgabe + rechteck[i][j];
 			}
 			System.out.println();
-			ausgabe += "\n";
+			ausgabe += "\r\n";
 		}
-		
+		ausgabe += "\r\n";
 		BufferedWriter out = null;
 		try {
-			out = new BufferedWriter(new FileWriter("thermometer.txt"));
+			out = new BufferedWriter(new FileWriter("thermometer.txt", true));
 			out.write(ausgabe);
 			
 		} catch (IOException e) {
